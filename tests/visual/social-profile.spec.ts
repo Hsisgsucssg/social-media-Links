@@ -8,7 +8,6 @@ test.describe('Social Profile Visual Regression Tests', () => {
   });
 
   test.describe('Desktop View (1440px)', () => {
-    test.use({ ...devices['Desktop Chrome'] });
 
     test('should display social profile card correctly on desktop', async ({ page }) => {
       await page.setViewportSize({ width: 1440, height: 900 });
