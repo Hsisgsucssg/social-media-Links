@@ -47,7 +47,6 @@ test.describe('Social Profile Visual Regression Tests', () => {
   });
 
   test.describe('Mobile View (375px)', () => {
-    test.use({ ...devices['Pixel 5'] });
 
     test('should display social profile card correctly on mobile', async ({ page }) => {
       await page.setViewportSize({ width: 375, height: 667 });
