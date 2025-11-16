@@ -1,0 +1,200 @@
+{
+  "socialMediaPlatforms": [
+    {
+      "id": "btn-1",
+      "label": "GitHub",
+      "url": "https://github.com/",
+      "color": "#333333",
+      "hoverColor": "#24292e",
+      "expectedSelector": "#btn-1",
+      "ariaLabel": "GitHub profile link",
+      "testVariations": [
+        "GitHub",
+        "github",
+        "GITHUB"
+      ]
+    },
+    {
+      "id": "btn-2",
+      "label": "Frontend Mentor",
+      "url": "https://www.frontendmentor.io/",
+      "color": "#333333",
+      "hoverColor": "#3f3f3f",
+      "expectedSelector": "#btn-2",
+      "ariaLabel": "Frontend Mentor profile link",
+      "testVariations": [
+        "Frontend Mentor",
+        "frontend-mentor",
+        "FRONTEND MENTOR"
+      ]
+    },
+    {
+      "id": "btn-3",
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/",
+      "color": "#333333",
+      "hoverColor": "#0077b5",
+      "expectedSelector": "#btn-3",
+      "ariaLabel": "LinkedIn profile link",
+      "testVariations": [
+        "LinkedIn",
+        "linkedin",
+        "LINKEDIN"
+      ]
+    },
+    {
+      "id": "btn-4",
+      "label": "Twitter",
+      "url": "https://twitter.com/",
+      "color": "#333333",
+      "hoverColor": "#1da1f2",
+      "expectedSelector": "#btn-4",
+      "ariaLabel": "Twitter profile link",
+      "testVariations": [
+        "Twitter",
+        "twitter",
+        "TWITTER"
+      ]
+    },
+    {
+      "id": "btn-5",
+      "label": "Instagram",
+      "url": "https://www.instagram.com/",
+      "color": "#333333",
+      "hoverColor": "#e4405f",
+      "expectedSelector": "#btn-5",
+      "ariaLabel": "Instagram profile link",
+      "testVariations": [
+        "Instagram",
+        "instagram",
+        "INSTAGRAM"
+      ]
+    }
+  ],
+  "expectedStructure": {
+    "totalButtons": 5,
+    "containerSelector": ".btn-s",
+    "buttonTagName": "button",
+    "requiredAttributes": ["id"],
+    "requiredTextContent": true,
+    "expectedOrder": ["GitHub", "Frontend Mentor", "LinkedIn", "Twitter", "Instagram"]
+  },
+  "urlPatterns": {
+    "github": {
+      "pattern": "^https:\\/\\/(www\\.)?github\\.com\\/",
+      "validExamples": [
+        "https://github.com/",
+        "https://www.github.com/",
+        "https://github.com/username"
+      ],
+      "invalidExamples": [
+        "http://github.com/",
+        "https://github.co/",
+        "ftp://github.com/"
+      ]
+    },
+    "frontendMentor": {
+      "pattern": "^https:\\/\\/(www\\.)?frontendmentor\\.io\\/",
+      "validExamples": [
+        "https://www.frontendmentor.io/",
+        "https://frontendmentor.io/profile/username"
+      ],
+      "invalidExamples": [
+        "http://frontendmentor.io/",
+        "https://frontend-mentor.io/"
+      ]
+    },
+    "linkedin": {
+      "pattern": "^https:\\/\\/(www\\.)?linkedin\\.com\\/",
+      "validExamples": [
+        "https://www.linkedin.com/",
+        "https://linkedin.com/in/username"
+      ],
+      "invalidExamples": [
+        "http://linkedin.com/",
+        "https://linked.in/"
+      ]
+    },
+    "twitter": {
+      "pattern": "^https:\\/\\/(www\\.)?(twitter\\.com|x\\.com)\\/",
+      "validExamples": [
+        "https://twitter.com/",
+        "https://www.twitter.com/",
+        "https://x.com/username"
+      ],
+      "invalidExamples": [
+        "http://twitter.com/",
+        "https://t.co/"
+      ]
+    },
+    "instagram": {
+      "pattern": "^https:\\/\\/(www\\.)?instagram\\.com\\/",
+      "validExamples": [
+        "https://www.instagram.com/",
+        "https://instagram.com/username"
+      ],
+      "invalidExamples": [
+        "http://instagram.com/",
+        "https://insta.com/"
+      ]
+    }
+  },
+  "edgeCases": {
+    "emptyText": "",
+    "specialCharacters": "!@#$%^&*()",
+    "unicodeText": "🚀💻✨",
+    "longText": "This is a very long social media platform name that exceeds normal button length",
+    "htmlEntities": "&lt;script&gt;alert('xss')&lt;/script&gt;",
+    "mixedCase": "gItHuB"
+  },
+  "buttonStates": {
+    "default": {
+      "backgroundColor": "#333333",
+      "color": "#ffffff",
+      "border": "none",
+      "cursor": "pointer"
+    },
+    "hover": {
+      "backgroundColor": "#555555",
+      "color": "#ffffff",
+      "border": "none",
+      "cursor": "pointer"
+    },
+    "focus": {
+      "outline": "2px solid #4d90fe",
+      "outlineOffset": "2px"
+    },
+    "active": {
+      "backgroundColor": "#222222",
+      "transform": "translateY(1px)"
+    },
+    "disabled": {
+      "backgroundColor": "#666666",
+      "cursor": "not-allowed",
+      "opacity": "0.6"
+    }
+  },
+  "accessibility": {
+    "expectedARIA": {
+      "role": "button",
+      "tabindex": "0",
+      "ariaLabel": true,
+      "ariaDescribedBy": false,
+      "ariaExpanded": false,
+      "ariaPressed": false
+    },
+    "keyboardNavigation": {
+      "tabOrder": "logical",
+      "enterAction": "activates",
+      "spaceAction": "activates",
+      "escapeAction": "none",
+      "arrowKeys": "none"
+    },
+    "screenReader": {
+      "announceOnClick": true,
+      "announceOnFocus": true,
+      "announceStateChanges": false,
+      "descriptiveLabels": true
+    }
+  }
+}
