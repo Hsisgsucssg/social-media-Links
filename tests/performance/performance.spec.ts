@@ -1,10 +1,6 @@
 import { test, expect } from '@playwright/test';
-import lighthouse from 'lighthouse';
-import * as chromeLauncher from 'chrome-launcher';
 
 test.describe('Performance and Core Web Vitals Testing', () => {
-  test.describe('Basic Performance Testing', () => {
-
   test.describe('Loading Performance', () => {
     test('should load resources efficiently', async ({ page }) => {
       const startTime = Date.now();
