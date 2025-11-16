@@ -1,0 +1,40 @@
+{
+  "name": "social-media-links",
+  "version": "1.0.0",
+  "description": "Frontend Mentor social links profile with comprehensive testing infrastructure",
+  "main": "index.html",
+  "scripts": {
+    "test": "playwright test",
+    "test:visual": "playwright test tests/visual/",
+    "test:a11y": "playwright test tests/accessibility/",
+    "test:performance": "playwright test tests/performance/",
+    "test:validation": "playwright test tests/validation/",
+    "test:ui": "playwright test --ui",
+    "test:visual:update": "playwright test tests/visual/ --update-snapshots",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "test:report": "playwright show-report"
+  },
+  "keywords": [
+    "frontend-mentor",
+    "social-profile",
+    "testing",
+    "playwright",
+    "accessibility",
+    "visual-regression"
+  ],
+  "author": "ABDUL SAMI",
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.40.0",
+    "@axe-core/playwright": "^4.8.0",
+    "axe-core": "^4.8.0",
+    "html-validator": "^6.0.0",
+    "lighthouse": "^11.3.0",
+    "playwright": "^1.40.0",
+    "@types/node": "^20.8.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
