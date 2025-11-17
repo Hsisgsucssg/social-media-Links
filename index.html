@@ -122,9 +122,58 @@
 
   
   
+  <!-- Attribution -->
   <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">ABDUL SAMI</a>.
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Enhanced by <a href="#" onclick="window.digitalCardApp?.showNotification('Next-generation digital card v2.0')">Digital Card Creator</a>.
   </div>
+
+  <!-- JavaScript Module -->
+  <script type="module" src="js/main.js"></script>
+
+  <!-- Fallback for browsers without ES6 module support -->
+  <script nomodule>
+    console.warn('This browser does not support JavaScript modules. Some features may not work.');
+
+    // Simple fallback functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      // Hide loading state
+      const loading = document.getElementById('app-loading');
+      if (loading) loading.style.display = 'none';
+
+      // Show card
+      const card = document.getElementById('profile-container');
+      if (card) card.style.display = 'block';
+
+      // Add no-js class for styling
+      document.body.classList.add('no-js');
+
+      // Basic social link handling
+      const socialLinks = document.querySelectorAll('[data-social-link]');
+      socialLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          const url = this.dataset.url;
+          if (url && url !== '#') {
+            window.open(url, '_blank');
+          }
+        });
+      });
+    });
+  </script>
+
+  <!-- Service Worker Registration for PWA -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('./sw.js')
+          .then(function(registration) {
+            console.log('SW registered: ', registration);
+          })
+          .catch(function(registrationError) {
+            console.log('SW registration failed: ', registrationError);
+          });
+      });
+    }
+  </script>
 </body>
 </html>
